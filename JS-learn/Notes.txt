@@ -1,0 +1,104 @@
+
+
+
+.js-lang
+
+    --> scripting lang for web-pages in browser-envi
+    +
+    --> server-side lang on Node.js
+    --> mobile appln
+    --> desktop appln
+    
+
+  .js-lang features
+
+    --> functional pgming lang
+    --> OOP
+    --> dynamic lang
+    --> closure support
+    --> single-threaded lang , can implement concurrency
+    --> All IO operatiosn by default Non-Blocing
+
+
+    when/where to use .js-lang ?
+
+    on event, to do anthing async
+
+
+
+    .js-lang in impln 'ECMASScript spec'
+
+    latest : ECMAScript-2015 . or ES6
+
+
+
+
+    How to run .js program?
+
+
+    using 'JS-runtime/engine'
+
+
+    Browser Envi
+
+
+        a. chrome ==> v8(c++)
+        b. firefox ==> rhino(java)
+        c. IE/Edge ==> chakra
+        d. Sarau ==> nitro
+
+        ....
+
+
+    Other Envi
+
+        a. Node.js  ==> v8
+        b. JVM  ==>  rhino/nashorn
+        c. MongoDB
+        d. Apache CouchDB
+        e. Adobe
+
+        ....
+
+---------------------------------------------------------
+
+
+JS-toc
+
+ 1. data-types
+ 2. execution-contexts/scope
+ 3. functions depth
+ 4. closures
+ 5. context owner ( this ==> keyword )
+ 6. Inheritance
+ 7. Object adv
+ 8. JS modules
+ 9. ES6/ES7 New Features
+ 10. Concurreny Model
+ 11. Async programming in .JS
+
+ 12. TypeScript
+ -------------------------------------------------------
+
+
+ // ES6 New features
+
+ New-Syntax
+ -----------
+
+    1. let & const keywords with block scope
+    2. Arrow functions
+    3. function default & rest params
+    4. destructuring
+    5. spread operator
+    6. obj-literal enhancements
+    7. String Interpolation
+    8. Symbol
+    9. iterators
+    10. class syntax
+ 
+
+ -----------------------------------
+
+
+
