@@ -4,8 +4,8 @@
     </div>
     <div class="col-md-6 col-xs-8 col-sm-8">
         <span class="badge">{{idx+1}}</span>
-        <h4>{{product.name}}</h4>
-        <h5>{{product.price}}</h5>
+        <h4>{{product.name | uppercase}} <small [innerText]="product.makeDate|date:'yyyy'"></small></h4>
+        <h5>{{product.price | priceDiscount:product.discount | currency:'INR':true}}</h5>
         <button *ngIf="product.canBuy" class="btn btn-primary">Buy</button>
 
         <hr/>
@@ -23,9 +23,15 @@
                 <p>Not Yet</p>
             </div>
             <div class="panel" *ngIf="isTabSelected(3)">
-                <p> None Yet </p>
+                <div class="alert alert-danger" *ngFor="let review of product.reviews">
+                    <span class="badge">{{review.stars}}</span> &mdash; {{review.author}}
+                    <hr/>
+                    <p>{{review.body}}</p>
+                </div>    
             </div>
         </section>
+
+        <!--<pre>{{product|json}}</pre>-->
 
     </div>
 </div>

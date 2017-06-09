@@ -7,21 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var product_component_1 = require("./product/product.component");
-var price_discount_pipe_1 = require("./pipes/price-discount.pipe");
-var AppModule = (function () {
-    function AppModule() {
+var PriceDiscountPipe = (function () {
+    function PriceDiscountPipe() {
     }
-    return AppModule;
+    PriceDiscountPipe.prototype.transform = function (originalPrice, args) {
+        if (!args)
+            return originalPrice - 1;
+        else
+            return originalPrice - args;
+    };
+    return PriceDiscountPipe;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.default, product_component_1.default, price_discount_pipe_1.default],
-        bootstrap: [app_component_1.default]
+PriceDiscountPipe = __decorate([
+    core_1.Pipe({
+        name: 'priceDiscount'
     })
-], AppModule);
-exports.default = AppModule;
-//# sourceMappingURL=app.module.js.map
+], PriceDiscountPipe);
+exports.default = PriceDiscountPipe;
+//# sourceMappingURL=price-discount.pipe.js.map

@@ -16,8 +16,14 @@ var AppComponent = (function () {
                 price: 198000,
                 description: 'New Mac pro',
                 canBuy: true,
+                makeDate: Date.now(),
+                discount: 10000,
                 images: [
                     { thumb: '', full: 'images/Laptop.png' }
+                ],
+                reviews: [
+                    { stars: 5, author: 'nag@gmail.com', body: 'good one' },
+                    { stars: 3, author: 'indu@gmail.com', body: 'costly one' }
                 ]
             },
             {
@@ -25,8 +31,13 @@ var AppComponent = (function () {
                 price: 18000,
                 description: 'New mobile',
                 canBuy: true,
+                makeDate: Date.now(),
                 images: [
                     { thumb: '', full: 'images/Mobile.png' }
+                ],
+                reviews: [
+                    { stars: 5, author: 'nag@gmail.com', body: 'good one' },
+                    { stars: 3, author: 'indu@gmail.com', body: 'costly one' }
                 ]
             }
         ];
@@ -36,7 +47,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'shop-app',
-        template: "\n        <div class=\"container\">\n            <div class=\"page-header\">{{appName}}</div>\n\n            <div class=\"list-group\">\n                 <div *ngFor=\"let product of products;let idx=index;let isFirst=first\" class=\"list-group-item\">\n                       <shop-product [product]=\"product\"></shop-product> \n                </div>    \n            </div>\n           \n        </div>\n    "
+        template: "\n        <div class=\"container\">\n            <div class=\"page-header\">{{appName}}</div>\n\n            <div class=\"list-group\">\n                 <div *ngFor=\"let product of products|slice:0:10;let idx=index;let isFirst=first\" class=\"list-group-item\">\n                       <shop-product [product]=\"product\"></shop-product> \n                </div>    \n            </div>\n           \n        </div>\n    "
     })
 ], AppComponent);
 exports.default = AppComponent;
