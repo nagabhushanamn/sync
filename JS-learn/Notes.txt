@@ -98,7 +98,43 @@ JS-toc
     10. class syntax
  
 
- -----------------------------------
+ ------------------------------------------------------------
 
 
 
+.js-lang
+
+    --> single-threaded lang
+    --> Non_bloking IO
+
+  -------------------------------
+
+
+  e.g chrome browser
+
+
+  A. JS-Runtime ( v8 ) , based on ECMAScript spec
+      -> single-call-stack
+      -> heap
+  B. Brower Web APIs , based on W3c standards
+        -> DOM,XHR,Timer,HTML5 APIs
+  C. Event/Callback/Message-Queue     
+  D. Event-Loop   
+
+  -----------------------------------
+
+
+  .js Async Programming
+  ------------------------
+
+  by default , on event every handler executes async in .js-runtime
+
+
+  Async APIs
+
+
+  a. Promise API ( es6 )
+
+  // ES7
+  b. Reactive Extentions with JavaScript ( RxJS ) . , 
+  c. async & await 

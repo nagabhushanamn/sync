@@ -1,0 +1,95 @@
+
+
+ what .js-lang can do with html-page in browser?
+
+
+ using browser provided APIs, can bring any magic to the page
+
+ APIs ==> DOM,XHR,Timer,...
+
+using DOM
+-------------
+  --> can create/retreive/update/delete HTML elements
+  --> can change element's inner text/html
+  --> can change element's style
+  --> can change element's properties
+  --> can listent events on elements
+  --> can rich UI comps
+  .....
+
+using XHR
+----------
+  --> can communicate with server async, update resp on existing page
+
+using Timer-API
+---------------
+  --> can run timer actions
+
+
+HTML5 APIs
+---------------
+
+refer : https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5
+
+-------------------------------------------------------------------------------
+
+
+
+
+problems with plain .js . with browser APIs
+---------------------------------------------
+
+
+ --> browser compatibility
+ --> performance ( e.g DOM manipulation , )
+ --> memory management (
+ --> data-binding is manual
+ --> code organization
+ --> too much code for simple operations..
+
+ -------------------
+
+
+ soln : using .js-lib & F.Ws
+
+
+ library...
+
+    -> jQuery
+
+    -> Backbone
+
+
+ Frameworks ==> MVC & MVVM
+
+    --> Marionette
+    --> knockout
+    --> AngularJS 1.x
+    --> EmberJS
+
+     .....
+
+
+  UI component F.Ws
+
+  ==> DOJO
+  ==> EXT JS    
+
+
+   W3c ==> Web Component Spec
+
+          -> component
+
+              -> template
+              -> css
+              -> shadow DOM
+
+
+
+
+   Facebook ==> React.js 
+
+   Google Team ==> Angular 
+
+   => Polymer js
+   => Vue JS   

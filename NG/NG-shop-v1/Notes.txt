@@ -1,0 +1,14 @@
+
+
+data-binding
+----------------
+
+
+  -> interpolation
+  -> property-binding
+
+      <ele [prop]="value" />
+
+  -> event-binding
+
+      <ele (event-name)="handler()" />    

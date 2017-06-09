@@ -24,7 +24,9 @@
 let myFuncs=[];
 
 for(var i=0;i<2;i++){
-    myFuncs.push(function(){return i;});
+    myFuncs.push((function(i){
+        return function(){return i;}
+    })(i));
 }
 
 console.log(myFuncs[0]());
