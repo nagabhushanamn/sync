@@ -18,5 +18,10 @@ export default class ProductComponent {
     isTabSelected(tabIndex: number) {
         return this.tab === tabIndex;
     }
+    submitNewReview(event: any, form: any, product: any) {
+        event.preventDefault();
+        product.reviews.push(form.value);
+        form.reset();
+    }
 
 }

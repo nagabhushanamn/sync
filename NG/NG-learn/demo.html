@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <input value="10" id="inp" onchange="valueChange(event)" />
+
+
+    <script>
+        let inpField = document.querySelector('#inp');
+        let count = inpField.value;
+        setInterval(() => {
+            count++
+            inpField.value = count;
+            inpField.onchange(inpField.value);
+        }, 1000);
+
+        function valueChange(event) {
+            console.log(event);
+        }
+    </script>
+
+
+</body>
+
+</html>

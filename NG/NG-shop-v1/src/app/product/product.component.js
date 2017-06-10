@@ -21,6 +21,11 @@ var ProductComponent = (function () {
     ProductComponent.prototype.isTabSelected = function (tabIndex) {
         return this.tab === tabIndex;
     };
+    ProductComponent.prototype.submitNewReview = function (event, form, product) {
+        event.preventDefault();
+        product.reviews.push(form.value);
+        form.reset();
+    };
     return ProductComponent;
 }());
 __decorate([

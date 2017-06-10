@@ -27,7 +27,34 @@
                     <span class="badge">{{review.stars}}</span> &mdash; {{review.author}}
                     <hr/>
                     <p>{{review.body}}</p>
-                </div>    
+                </div>
+
+                <hr/>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading"> Review Form </div>
+                    <div class="panel-body">
+                        <form #reviewForm="ngForm" 
+                              (submit)="submitNewReview($event,reviewForm,product)">
+                            <div class="form-group">
+                                <label>stars</label>
+                                <select class="form-control" (ngModel)="stars" name="stars">
+                                    <option *ngFor="let i of [1,2,3,4,5]">{{i}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>author</label>
+                                <input class="form-control" (ngModel)="author" name="author" />
+                            </div>
+                            <div class="form-group">
+                                <label>body</label>
+                                <textarea class="form-control" (ngModel)="body" name="body"></textarea>
+                            </div>
+                            <button class="btn btn-primary">submit</button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </section>
 

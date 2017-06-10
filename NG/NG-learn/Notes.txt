@@ -1,0 +1,11 @@
+
+
+
+ un-untouched
+ touched
+
+ pristine
+ dirty
+
+ valid
+ invalid

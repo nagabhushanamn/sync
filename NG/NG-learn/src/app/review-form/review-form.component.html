@@ -1,0 +1,57 @@
+<div class="col-xs-8 col-sm-6 col-md-6">
+
+  <form #myForm #reviewForm="ngForm" (submit)="submitNewReview($event,reviewForm)">
+    <div class="form-group" [ngClass]="{'has-error':name.invalid&&reviewForm.submitted,'other-class':false}">
+      <label>Name</label>
+      <input class="form-control" name="name" autofocus required #name="ngModel" [ngModel]="reviewModel.name" (ngModelChange)="reviewModel.name=$event"
+      />
+
+      <div class="help-block" *ngIf="name.invalid&&reviewForm.submitted">
+        Name is Required
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input class="form-control" name="email" #email [(ngModel)]="reviewModel.email" />
+    </div>
+
+    <div class="form-group">
+      <label>Items</label><hr/>
+      <button type="button" (click)="toggleAll()">select all</button>
+      <button type="button">unselect all</button>
+      <select class="form-control" multiple size="10">
+        <option *ngFor="let item of items" [selected]="isSelectAll">{{item.name}}</option>
+      </select>
+    </div>
+
+
+    <button class="btn btn-primary"> Submit </button>
+  </form>
+  <hr/>
+  <!--
+  <hr/> Form
+  <pre>
+    {{reviewForm.value|json}}
+  </pre>
+  <hr/> Model
+  <pre>
+    {{reviewModel|json}}
+  </pre>
+  
+
+  <pre>
+    {{myForm.className|json}} , {{reviewForm.submitted}}
+  </pre>
+
+  <pre>
+    {{myForm.name.className|json}}
+  </pre>
+  <pre>
+    {{myForm.email.className|json}}
+  </pre>
+
+-->
+
+
+
+</div>
