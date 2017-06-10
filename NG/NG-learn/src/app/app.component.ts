@@ -8,7 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  count: number = 100
+  count: number = 100;
+
+  storyList: Array<any> = [
+    { name: 'Nag', message: 'today lunch good' },
+    { name: 'Praveen', message: 'im sleepy in class' }
+  ];
 
   ngOnInit() {
     // setInterval(() => {
@@ -18,6 +23,10 @@ export class AppComponent {
 
   incHandler(event) {
     this.count += event.value;
+  }
+
+  addNewStory(event) {
+    this.storyList.push(event);
   }
 
 }

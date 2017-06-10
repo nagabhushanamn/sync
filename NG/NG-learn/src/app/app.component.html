@@ -1,10 +1,15 @@
 <div class="container">
     <div class="page-header"> NG - Learn</div>
 
+    <!--
     <app-hit-button  (hit)="incHandler($event)" [label]="1"></app-hit-button>
     <app-hit-button  (hit)="incHandler($event)" [label]="10"></app-hit-button>
     <app-hit-button  (hit)="incHandler($event)" [label]="100"></app-hit-button>
     <hr/>
     <app-display-count [value]="count"></app-display-count>
+    -->
+
+    <app-story-form (story)="addNewStory($event)"></app-story-form>
+    <app-story-list [storyList]="storyList"></app-story-list>
 
 </div>

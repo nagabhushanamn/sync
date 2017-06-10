@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import { ProductService } from './services/product.service';
 
 @Component({
     selector: 'shop-app',
@@ -9,46 +10,41 @@ import { Component } from '@angular/core';
 
             <div class="list-group">
                  <div *ngFor="let product of products|slice:0:10;let idx=index;let isFirst=first" class="list-group-item">
-                       <shop-product [product]="product"></shop-product> 
+                       <shop-product [product]="product" (review)="handleNewReview($event)"></shop-product> 
                 </div>    
             </div>
            
         </div>
-    `
+    `,
+    providers: [ProductService]
 })
 class AppComponent {
+
     appName: string = "shoping-IT";
-    products: any[] = [
-        {
-            name: 'Laptop',
-            price: 198000,
-            description: 'New Mac pro',
-            canBuy: true,
-            makeDate: Date.now(),
-            discount: 10000,
-            images: [
-                { thumb: '', full: 'images/Laptop.png' }
-            ],
-            reviews:[
-                {stars:5,author:'nag@gmail.com',body:'good one'},
-                {stars:3,author:'indu@gmail.com',body:'costly one'}
-            ]
-        },
-        {
-            name: 'Mobile',
-            price: 18000,
-            description: 'New mobile',
-            canBuy: true,
-            makeDate: Date.now(),
-            images: [
-                { thumb: '', full: 'images/Mobile.png' }
-            ],
-            reviews:[
-                {stars:5,author:'nag@gmail.com',body:'good one'},
-                {stars:3,author:'indu@gmail.com',body:'costly one'}
-            ]
-        }
-    ];
+    products: any[];
+
+    constructor(private _productService: ProductService) {
+    }
+
+    ngOnInit() {
+        // let self = this;
+        this._productService.getAllProducts()
+            .subscribe((items: any) => {
+                this.products = items;
+            });
+    }
+
+    handleNewReview(event: any) {
+        this._productService.postNewReview(event.review, event.product.id)
+            .subscribe(review => {
+                if (event.product.reviews) {
+                    event.product.push(review);
+                } else {
+                    event.product.reviews = [review];
+                }
+            });
+
+    }
 
 
 

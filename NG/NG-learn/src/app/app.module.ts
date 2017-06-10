@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { ReviewFormComponent } from './review-form/review-form.component';
 import { HitButtonComponent } from './hit-button/hit-button.component';
 import { DisplayCountComponent } from './display-count/display-count.component';
+import { StoryComponent } from './story/story.component';
+import { StoryListComponent } from './story-list/story-list.component';
+import { StoryFormComponent } from './story-form/story-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReviewFormComponent,
     HitButtonComponent,
-    DisplayCountComponent
+    DisplayCountComponent,
+    StoryComponent,
+    StoryListComponent,
+    StoryFormComponent
   ],
   imports: [
     BrowserModule,

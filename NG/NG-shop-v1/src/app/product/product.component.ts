@@ -1,18 +1,31 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { ProductService } from '../services/product.service';
 
 @Component({
     selector: 'shop-product',
-    templateUrl: './product.component.html'
+    templateUrl: './product.component.html',
 })
 export default class ProductComponent {
 
     @Input()
     product: any;
 
+    @Output()
+    review = new EventEmitter();
+
     tab: number = 1;
+
+    constructor(private _productService: ProductService) { }
+
     changeTab(tabIndex: number, event: any) {
         event.preventDefault();
+
+        this._productService.gerReviews(this.product.id)
+            .subscribe(resp => {
+                this.product.reviews = resp;
+            })
+
         this.tab = tabIndex;
     }
     isTabSelected(tabIndex: number) {
@@ -20,7 +33,7 @@ export default class ProductComponent {
     }
     submitNewReview(event: any, form: any, product: any) {
         event.preventDefault();
-        product.reviews.push(form.value);
+        this.review.emit({ review: form.value, product });
         form.reset();
     }
 

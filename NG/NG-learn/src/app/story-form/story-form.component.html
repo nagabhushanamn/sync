@@ -1,0 +1,16 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">story form</div>
+  <div class="panel-body">
+    <form #storyForm="ngForm" (submit)="submitStory($event,storyForm)">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" autofocus (ngModel)="name" name="name" />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control" autofocus (ngModel)="message" name="message"></textarea>
+      </div>
+      <button>submit</button>
+    </form>
+  </div>
+</div>

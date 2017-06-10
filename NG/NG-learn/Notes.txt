@@ -1,11 +1,14 @@
 
 
 
- un-untouched
- touched
 
- pristine
- dirty
+my-facebook
+------------
 
- valid
- invalid
+   AppComponent
+
+    - StoryForm
+    - StoryList 
+       -Story(s)
+
+  -------------------
