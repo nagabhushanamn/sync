@@ -9,6 +9,7 @@ import { DisplayCountComponent } from './display-count/display-count.component';
 import { StoryComponent } from './story/story.component';
 import { StoryListComponent } from './story-list/story-list.component';
 import { StoryFormComponent } from './story-form/story-form.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StoryFormComponent } from './story-form/story-form.component';
     DisplayCountComponent,
     StoryComponent,
     StoryListComponent,
-    StoryFormComponent
+    StoryFormComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

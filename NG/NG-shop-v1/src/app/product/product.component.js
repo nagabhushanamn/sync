@@ -34,6 +34,13 @@ var ProductComponent = (function () {
         this.review.emit({ review: form.value, product: product });
         form.reset();
     };
+    ProductComponent.prototype.handleReviewDelete = function (reviewId, productId) {
+        var _this = this;
+        this._productService.deleteReview(reviewId, productId)
+            .subscribe(function (resp) {
+            _this.product.reviews = _this.product.reviews.filter(function (item) { return item.id !== reviewId; });
+        });
+    };
     return ProductComponent;
 }());
 __decorate([

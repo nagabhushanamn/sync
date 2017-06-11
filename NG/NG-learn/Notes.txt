@@ -12,3 +12,25 @@ my-facebook
        -Story(s)
 
   -------------------
+
+
+
+  browser appln state will get change on 3 reasons
+
+
+  --> Events
+  --> XHR calls
+  --> Timers
+
+
+  are all asyncronous
+
+
+  currentState
+
+        => async oprns
+
+  newState
+
+  currentState!==newState . ==> DOM Updates
+

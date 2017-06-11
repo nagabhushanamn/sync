@@ -1,0 +1,13 @@
+<div>
+
+  <table class="table">
+    <tr *ngFor="let product of products">
+      <td><a href="#" (click)="showProduct($event,product.id)">{{product.name}}</a></td>
+      <td>{{product.price|currency:'INR':true}}</td>
+      <td>{{product.makeDate|date}}</td>
+      <td><span></span></td>
+      <td><a><span class="glyphicon glyphicon-trash"></span></a></td>
+    </tr>
+  </table>
+
+</div>

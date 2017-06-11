@@ -36,5 +36,11 @@ export default class ProductComponent {
         this.review.emit({ review: form.value, product });
         form.reset();
     }
+    handleReviewDelete(reviewId: string, productId: string) {
+        this._productService.deleteReview(reviewId, productId)
+            .subscribe(resp => {
+                this.product.reviews = this.product.reviews.filter((item: any) => item.id !== reviewId);
+            });
+    }
 
 }

@@ -35,6 +35,12 @@ var ProductService = (function () {
             .map(function (resp) { return resp.json(); });
         ;
     };
+    ProductService.prototype.deleteReview = function (reviewId, productId) {
+        var apiUrl = "http://10.16.160.85:8080/api/products/" + productId + "/reviews/" + reviewId;
+        return this._http.delete(apiUrl)
+            .map(function (resp) { return resp.json(); });
+        ;
+    };
     return ProductService;
 }());
 ProductService = __decorate([

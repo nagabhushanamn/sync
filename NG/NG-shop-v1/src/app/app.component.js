@@ -27,12 +27,7 @@ var AppComponent = (function () {
     AppComponent.prototype.handleNewReview = function (event) {
         this._productService.postNewReview(event.review, event.product.id)
             .subscribe(function (review) {
-            if (event.product.reviews) {
-                event.product.push(review);
-            }
-            else {
-                event.product.reviews = [review];
-            }
+            event.product.reviews = event.product.reviews.concat([review]);
         });
     };
     return AppComponent;

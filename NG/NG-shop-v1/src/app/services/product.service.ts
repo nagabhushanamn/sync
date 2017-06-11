@@ -28,5 +28,11 @@ export class ProductService {
             .map(resp => resp.json());;
     }
 
+    deleteReview(reviewId: string, productId: string) {
+        const apiUrl = `http://10.16.160.85:8080/api/products/${productId}/reviews/${reviewId}`;
+        return this._http.delete(apiUrl)
+            .map(resp => resp.json());;
+    }
+
 
 }

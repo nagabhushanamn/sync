@@ -37,11 +37,7 @@ class AppComponent {
     handleNewReview(event: any) {
         this._productService.postNewReview(event.review, event.product.id)
             .subscribe(review => {
-                if (event.product.reviews) {
-                    event.product.push(review);
-                } else {
-                    event.product.reviews = [review];
-                }
+                event.product.reviews = [...event.product.reviews, review];
             });
 
     }

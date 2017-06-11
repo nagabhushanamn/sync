@@ -1,0 +1,30 @@
+
+
+directives
+------------
+
+   -> component . ( e.g directive with Template)
+   -> structural   e.g ngIf,ngSwitch,ngFor,...
+   -> attribute .  e.g ngClass, ngStyle , etc... 
+
+
+ 
+
+
+
+
+-------------------------------------------------
+
+DataModel               FormModel
+
+Employee                 FormGroup . patchValue(DataModel)
+    Address                 -F.C
+                            -F.C
+
+                            -FormGroup
+
+                               -F.C
+                               -F.C
+
+
+

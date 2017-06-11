@@ -1,0 +1,32 @@
+
+
+Model
+
+    -> Product
+
+        id
+        name
+        price
+        makeDate
+        description
+
+
+Service
+
+    -> ProductService
+
+---------------------------------
+
+View
+
+    AppComponent
+
+    -> HomeComponent
+    -> ProductList
+    -> ProductDetail
+    -> ProductForm            
+
+---------------------------------
+
+
+    
